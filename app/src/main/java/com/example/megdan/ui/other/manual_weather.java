@@ -22,9 +22,23 @@ import java.util.ArrayList;
 
 public class manual_weather extends AppCompatActivity {
 
-    String CITY = "Anchorage";
-    //Tutorial API
-    //String API = "8118ed6ee68db2debfaaa5a44c832918";
+//==================================================================================================
+    /*
+     *
+     * PUT LAT & LONG COORDINATES IN VARIABLES BELOW!!!
+     * They can be put in as strings or doubles. You can decide and change the type as necessary.
+     *
+     */
+
+    Double LAT = 33.77;
+    Double LON = -84.44;
+//==================================================================================================
+
+
+    String CITY = "Atlanta";
+    // Tutorial API
+    // String API = "8118ed6ee68db2debfaaa5a44c832918";
+    // My API
     String API = "29e7997d4723758edde7d77349492211";
 
     TextView actual_temp, condition, title;
@@ -43,7 +57,6 @@ public class manual_weather extends AppCompatActivity {
 
         new weatherTask().execute();
 
-
     }
 
     class weatherTask extends AsyncTask<String, Void, String> {
@@ -54,8 +67,9 @@ public class manual_weather extends AppCompatActivity {
         }
 
         protected String doInBackground(String... args) {
-            String response = HttpRequest.executeGet("https://api.openweathermap.org/data/2.5/weather?q=" + CITY + "&units=imperial&appid=" + API);
-            return response;
+            // String responseByCity = HttpRequest.executeGet("https://api.openweathermap.org/data/2.5/weather?q=" + CITY + "&units=imperial&appid=" + API);
+            String responseByCoordinates = HttpRequest.executeGet("https://api.openweathermap.org/data/2.5/weather?lat=" + LAT + "&lon=" + LON + "&units=imperial&appid=" + API);
+            return responseByCoordinates;
         }
 
         @Override
@@ -89,7 +103,7 @@ public class manual_weather extends AppCompatActivity {
                 String rainOrNot = condition.getText().toString();
 
                 // Type of pants
-                if (temperature > 75) {
+                if (temperature > 70) {
                     arrayList.add("shorts");
                 } else {
                     arrayList.add("long pants");
@@ -109,7 +123,7 @@ public class manual_weather extends AppCompatActivity {
                     arrayList.add("rain boots");
                     arrayList.add("umbrella");
                 }
-                
+
 
                 // Set the listview adapter
                 ArrayAdapter arrayAdapter = new ArrayAdapter(manual_weather.this, android.R.layout.simple_list_item_1, arrayList);
