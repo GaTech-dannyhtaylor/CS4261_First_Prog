@@ -2,6 +2,8 @@ package com.example.megdan.ui.other;
 
 import com.example.megdan.HttpRequest;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import com.example.megdan.R;
 
@@ -22,6 +24,8 @@ import java.util.ArrayList;
 
 public class manual_weather extends AppCompatActivity {
 
+
+
 //==================================================================================================
     /*
      *
@@ -30,8 +34,8 @@ public class manual_weather extends AppCompatActivity {
      *
      */
 
-    Double LAT = 33.77;
-    Double LON = -84.44;
+    Double LAT;
+    Double LON;
 //==================================================================================================
 
 
@@ -49,6 +53,9 @@ public class manual_weather extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manual_weather);
+        Intent myIntent = getIntent();
+        LAT = myIntent.getDoubleExtra("lat", 0);
+        LON = myIntent.getDoubleExtra("lng", 0);
 
         actual_temp = findViewById(R.id.actual_temp_textView);
         condition = findViewById(R.id.condition_textView);
