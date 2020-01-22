@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "667536326143",
+    "firebase_url": "https://megdan-d3560.firebaseio.com",
+    "project_id": "megdan-d3560",
+    "storage_bucket": "megdan-d3560.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:667536326143:android:38428a477cbb3e39247bca",
+        "android_client_info": {
+          "package_name": "com.example.megdan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "667536326143-drgqt7ebofcmfgb2ube8j66p0sgj1pb8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDC7bWwnXl6bxwnmjQn6CiEOFvMqyDvgyQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "667536326143-drgqt7ebofcmfgb2ube8j66p0sgj1pb8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
